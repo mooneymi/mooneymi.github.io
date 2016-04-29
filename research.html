@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<title>Michael Mooney, PhD | Research</title>
+	<style>
+		body 				{background-color:lightgray; margin:0px}
+		.imageBox			{width:900px; height:125px; padding:0px; margin:0px; vertical-align:bottom; background-color:#3F3F3F}
+		.mainTable 			{background-color:white; width:900px; margin-left:auto; margin-right:auto; border-style:solid; border-width:1px; border-color:darkgray; border-collapse:collapse; padding:0px;}
+		.menuItem 			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:ghostwhite; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:visited	{}
+		a.menuItem:hover		{background-color:darkslategrey; color:white; border-bottom-color:#3F3F3F}
+		a.menuItem.active		{}
+		.curItem			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:lightsteelblue; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:visited		{}
+		a.curItem:hover		{}
+		a.curItem.active		{}
+		.tableBody			{background-color:white; width:900px; padding:10px 20px 10px 20px; font-family:verdana; font-size:10pt; color:black}
+	</style>
+</head>
+<body>
+	<table class="mainTable">
+	<tr>
+		<td class="imageBox" colspan=4><div style="height: 80px; width:425px; line-height:80px; background-color: #295747; color: white; font-family: impact; font-size: 44px; font-weight: lighter; text-align: center; float:left; vertical-align: middle; padding: 40px, 0px 0px 40px; border-width:1px; border-style:solid; border-color:dimgrey; margin:25px 0px 0px 25px"><span itemprop="name">Michael Mooney</span>, PhD</div><img style="float:right; margin:0px 75px 0px 0px" src="./dna.gif"></td>
+	</tr>
+	<tr>
+		<td class="menuItem"><a class="menuItem" href="./index.html">ABOUT</a></td>
+		<td class="curItem"><a class="curItem" href="./research.html">RESEARCH</a></td>
+		<td class="menuItem"><a class="menuItem" href="./code.html">CODE</a></td>
+		<td class="menuItem"><a class="menuItem" href="./edu.html">EDUCATION</a></td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<h2>Discovery of Polygenic Effects in Complex Diseases</h2>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<p>
+			Although many genetic variants associated with complex diseases have been discovered, most have only a small effect on disease risk and therefore have not been useful for the purposes of diagnosis or prognosis. This gap between the known impact of heredity on disease risk and the lack of clinically useful genetic variants has been called the <a href="https://en.wikipedia.org/wiki/Missing_heritability_problem">"missing heritability problem"</a> and is a major challenge facing the field of complex disease genetics. One current hypothesis is that this "missing heritability" may be found in the complex web of interactions (<a href="https://en.wikipedia.org/wiki/Epistasis">epistasis</a>) between multiple genes; that one variant will only exert a meaningful effect when in the presence of one or more other variants. My early work was focused on the developed an algorithm for detecting multi-locus associations in <a href="https://en.wikipedia.org/wiki/Genome-wide_association_study">genome-wide association study</a> data. The algorithm adapts a standard search and optimization technique, called a <a href="https://en.wikipedia.org/wiki/Genetic_algorithm">genetic algorithm</a> (based on the process of natural selection), and is guided by multiple sources of prior knowledge about the disease of interest, including known genetic associations and known protein-protein interactions. Given the enormous number of possible combinations of interactions between variants on a genome-wide scale, this type of probabilistic algorithm in combination with prior knowledge allows for the discovery of meaningful genetic interactions without the need for extensive computational resources.<br /><br />
+			
+			<ul>
+			<li><b>Michael A. Mooney</b>, Beth Wilmot, The Bipolar Genome Study, Shannon K. McWeeney. The GA and the GWAS: Using Genetic Algorithms to Search for Multi-locus Associations. <i>IEEE/ACM Transactions on Computational Biology and Bioinformatics</i>, vol. 9, no. 3, pp. 899-910, May-June 2012. PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3748153/">PMC3748153</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>1.4</b>]</font></li>
+			</ul>
+		</p>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<h2>Pathway Analysis</h2>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<p>
+			The realization that complex diseases are polygenic in nature, has led researchers to develop a variety of methods to provide biological context for the numerous genetic associations identified to date. These various techniques are collectively referred to as gene-set analyses or <a href="https://en.wikipedia.org/wiki/Pathway_analysis">pathway analyses</a> (since biological pathway models are often used to group genes in a meaningful way), and they aim to provide a measure of association between a disease and a group of genes or variants. Given that there are numerous methods for summarizing the effects of multiple genetic variants at the level of genes or gene sets, the interpretation and comparison of results from these types of analyses has become a major challenge. The focus of my work in this area has been to shed light on the inherent biases and the statistical and bioinformatic intricacies of these methods, with the goal of improving cross-method and cross-study comparability.<br /><br />
+			
+			<ul>
+			<li><b>Mooney MA</b>, McWeeney SK, Faraone S, Hinney A, Hebebrand J; IMAGE2 Consortium; German ADHD GWAS Group, Nigg JT, Wilmot B. Pathway analysis in attention deficit hyperactivity disorder: An ensemble approach. <i>Am J Med Genet B Neuropsychiatr Genet</i>. 2016 Mar 22. doi: 10.1002/ajmg.b.32446. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/27004716">27004716</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>3.4</b>]</font></li>
+			<li><b>Mooney MA</b>, Wilmot B. Gene set analysis: A step-by-step guide. <i>Am J Med Genet B Neuropsychiatr Genet</i>. 2015 Jun 8. doi: 10.1002/ajmg.b.32328. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/26059482">26059482</a>, PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4638147/">PMC4638147</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>3.4</b>]</font></li>
+			<li><b>Mooney MA</b>, Nigg JT, McWeeney SK, Wilmot B. 'Pitfalls in the application of gene set analysis to genetics studies': a response. <i>Trends Genet</i>. 2014 Dec. 30(12):514-5. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/25459302">25459302</a>, PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4476633/">PMC4476633</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>9.7</b>]</font></li>
+			<li><b>Michael A. Mooney</b>, Shannon K. McWeeney, Joel Nigg, Beth Wilmot. Functional and Genomic Context in Pathway Analysis of GWAS Data. <i>Trends in Genetics</i>, 2014, September, 30(9):390-400. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/25154796">25154796</a>, PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4266582/">PMC4266582</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>9.7</b>]</font></li>
+			</ul>
+		</p>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<h2>Systems Immunogenetics</h2>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<p>
+			<br /><br />
+			<ul>
+			<li></li>
+			</ul>
+		</p>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<h2>Transcriptomics</h2>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<p>
+			The development of techniques for measuring the abundance of all mRNA (the <a href="https://en.wikipedia.org/wiki/Transcriptome">transcriptome</a>) in a tissue sample has been a major breakthrough in complex disease genetics. Gene expression microarray experiments have allowed researchers to gain insights into how the complex patterns of gene activity inside a cell contribute to many complex traits. Furthermore, the vast number of genome-wide expression data sets produced in recent years has provided a wealth of publicly available data useful for secondary analyses and meta-analyses. However, the fact that a number of different platforms have been used to produce the data has led to challenges for comparing and integrating data across studies. My work has focused on evaluating methods for cross-platform comparison of gene expression data, and has illustrated differences among platforms in terms of their ability to identify alternatively spliced transcripts and the impact of polymorphisms on microarray performance.<br /><br />
+			
+			<ul>
+			<li>Robert Hitzemann, Daniel Bottomly, Ovidiu Iancu, Kari Buck, Beth Wilmot, <b>Michael Mooney</b>, Robert Searles, Christina Zheng, John Belknap, John Crabbe, and Shannon McWeeney. The Genetics of Gene Expression in Complex Mouse Crosses as a Tool to Study the Molecular Underpinnings of Behavior Traits. <i>Mammalian Genome</i>, 2013 Dec 31. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/24374554">24374554</a>, PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3916704/">PMC3916704</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>2.4</b>]</font></li>
+			<li><b>Michael Mooney</b> and Shannon McWeeney. "Data Integration and Reproducibility for High-Throughput Transcriptomics" in Brain Transcriptome, International Review of Neurobiology, Volume 116, 2014. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/25172471">25172471</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>1.9</b>]</font></li>
+			<li>Laderas T, Walter N, <b>Mooney M</b>, Vartanian K, Darakjian P, Buck K, Harrington C, Belknap J, Hitzemann R, McWeeney S. Computational Detection of Alternative Exon Usage. <i>Frontiers in Neuroscience</i>, 2011, 5:69. PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3097375/">PMC3097375</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>3.6</b>]</font></li>
+			<li>Daniel Bottomly, Nicole A.R. Walter, Jessica Ezzell Hunter, Priscila Darakjian, Sunita Kawane, Kari J. Buck, Robert Searles, <b>Michael Mooney</b>, Shannon McWeeney and Robert Hitzemann. Evaluating gene expression in C57BL/6J and DBA/2J mouse striatum using RNA-Seq and microarrays. <i>PLOS One</i>, 2011 Mar 24, 6(3):e17820. PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3063777/">PMC3063777</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>4.0</b>]</font></li>
+			<li>Walter NA, Bottomly D, Laderas T, <b>Mooney MA</b>, Darakjian P, Searles RP, Harrington CA, McWeeney SK, Hitzemann R, Buck KJ. High throughput sequencing in mice: a platform comparison identifies a preponderance of cryptic SNPs. <i>BMC Genomics</i>, 2009 Aug 17, 10:379. PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2743714/">PMC2743714</a><font style="font-family:verdana; font-size:10pt; color:darkred"> [Impact Factor: <b>4.4</b>]</font></li>
+			</ul>
+		</p>	
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<br />
+		</td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<p style="font-family:impact; font-size:16pt; color:#3F3F3F; text-align:center">evo&middotcomp&middotbio</p>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

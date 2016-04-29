@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<title>Michael Mooney, PhD | Code | PolyGA | User Manual</title>
+	<style>
+		body 				{background-color:lightgray; margin:0px}
+		.imageBox			{width:900px; height:125px; padding:0px; margin:0px; vertical-align:bottom; background-color:#3F3F3F}
+		.mainTable 			{background-color:white; width:900px; margin-left:auto; margin-right:auto; border-style:solid; border-width:1px; border-color:darkgray; border-collapse:collapse; padding:0px;}
+		.menuItem 			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:ghostwhite; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:visited	{}
+		a.menuItem:hover		{background-color:darkslategrey; color:white; border-bottom-color:#3F3F3F}
+		a.menuItem.active		{}
+		.curItem			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:lightsteelblue; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:visited		{}
+		a.curItem:hover		{}
+		a.curItem.active		{}
+		.tableBody			{background-color:white; width:900px; padding:10px 20px 10px 20px; font-family:verdana; font-size:10pt; color:black}
+		.commandLine		{font-family:courier; font-size:10pt; font-weight:bold; color:black; background-color:#F7F7E3; border:1px solid gray; padding:20px;}
+		.dataText			{font-family:Courier; font-size:12pt; font-weight:normal; color:black; background-color:#EAEAEA; border:1px solid gray; padding:20px;}
+		.toc1				{background-color:white; font-family:verdana; font-size:11pt; font-weight:bold; color:black}
+		.toc2				{background-color:white; font-family:verdana; font-size:11pt; color:black; padding-left: 25px;}
+		.toc3				{background-color:white; font-family:verdana; font-size:11pt; color:black; padding-left: 50px;}
+	</style>
+</head>
+<body>
+	<table class="mainTable">
+	<tr>
+		<td class="imageBox" colspan=4><div style="height: 80px; width:425px; line-height:80px; background-color: #295747; color: white; font-family: impact; font-size: 44px; font-weight: lighter; text-align: center; float:left; vertical-align: middle; padding: 40px, 0px 0px 40px; border-width:1px; border-style:solid; border-color:dimgrey; margin:25px 0px 0px 25px"><span itemprop="name">Michael Mooney</span>, PhD</div><img style="float:right; margin:0px 75px 0px 0px" src="../../dna.gif"></td>
+	</tr>
+	<tr>
+		<td class="menuItem"><a class="menuItem" href="../../index.html">ABOUT</a></td>
+		<td class="menuItem"><a class="menuItem" href="../../research.html">RESEARCH</a></td>
+		<td class="curItem"><a class="curItem" href="../../code.html">CODE</a></td>
+		<td class="menuItem"><a class="menuItem" href="../../index.html">RESOURCES</a></td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<header style="border-bottom: 1px solid #3F3F3F;"><h2 style="display: inline-block;">PolyGA: &nbsp;User Manual</h2><span style="margin-left: 493px;">(<a href="../polyga.html">Back to <b>PolyGA</b></a>)</span></header>
+		<br />
+		<h3><a name="TOC">Table of Contents</a></h3>
+		<span class="toc1"><a href="#Installation">I. Installation</a><br /></span>
+		<span class="toc2"><a href="#Depend">A. Dependencies</a><br /></span>
+		<span class="toc2"><a href="#PolyGA">B. PolyGA</a><br /></span>
+		<span class="toc1"><a href="#Quick">II. Quick Start Guide</a><br /></span>
+		<span class="toc2"><a href="./quick_start.html">A. Using the supplied example scripts and data</a><br /></span>
+		<span class="toc1"><a href="#Input">III. Input</a><br /></span>
+		<span class="toc2"><a href="#Parameters">A. PolyGA parameters</a><br /></span>
+		<span class="toc3"><a href="#CommandLine">1. Command-line parameters</a><br /></span>
+		<span class="toc3"><a href="#Config">2. Configuration file</a><br /></span>
+		<span class="toc2"><a href="#Annotations">B. Genome annotations</a><br /></span>
+		<span class="toc2"><a href="#Rscript">C. R script</a><br /></span>
+		<span class="toc1"><a href="#Output">IV. Output</a><br /></span>
+		<span class="toc1"><a href="#Parallel">V. Parallelization</a><br /></span>
+		<span class="toc2"><a href="#PP">A. Parallel Python</a><br /></span>
+		<span class="toc2"><a href="#Rparallel">B. R packages for parallel processing</a><br /></span>
+		</td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<hr style="width=850px; height:1px; border:0; background-color:#3F3F3F" />
+		<br />
+		<span class="toc1"><a name="Installation">I. Installation</a></span> (<a href="#TOC">Back to top</a>)
+		<br /><br />
+		<span class="toc2" style="padding-left: 0px;"><a name="Depend">A. Dependencies</a></span>
+		<p>The PolyGA program requires a number of Python modules and the R statistical environment to be installed:<br /><br />
+		1. Argparse<br />
+		2. PyTables<br />
+		3. NetworkX<br />
+		4. Rpy2 (and R)<br />
+		5. Parallel Python<br />
+		6. Matplotlib<br /><br />
+		Note: The development of PolyGA has been done in Linux and Mac OS X environments. The installation of the specified dependencies was found to be very simple on Ubuntu Linux since Ubuntu packages exists for all of them. While it should be possible to get PolyGA running on Windows, this has not been tested. In the future I hope to be able to provide executables (using a tool such as <a href="http://cx-freeze.readthedocs.org/en/latest/index.html">cx_Freeze</a>) that will simplify the installation procedure.<br /><br />
+		<u>A-1. Argparse</u><br />
+		The argparse Python module is included with Python >= 2.7 and Python >= 3.2 (for earlier versions it is available as a separate module).<br /><br />
+		Argparse documentation: <a href="http://docs.python.org/2.7/library/argparse.html">http://docs.python.org/2.7/library/argparse.html</a><br /><br />
+		<u>A-2. PyTables</u><br />
+		PyTables is a Python module that allows for the creation and manipulation of HDF5 files. The Heirarchical Data Format (HDF) is a set of libraries and file formats designed to efficiently store and organize large data sets. To install PyTables from source you must have Python (>= 2.4), the HDF5 library (>= 1.8.4), and the NumPy (>= 1.4.1) and Numexpr (>= 1.4.1) modules installed. You may also need Cython (>= 0.13). Precompiled binaries for Windows are available, which include the DLLs for HDF5 (you will still need the pre-requisite Python, Numpy and Numexpr installed). For more detailed installation instructions see the following links:<br /><br />
+		Pytables: <a href="http://www.pytables.org/moin/PyTables">http://www.pytables.org/moin/PyTables</a><br />
+		PyTables documentation: <a href="http://pytables.github.com/usersguide/">http://pytables.github.com/usersguide/</a><br />
+		PyTables downloads: <a href="http://sourceforge.net/projects/pytables/files/pytables/">http://sourceforge.net/projects/pytables/files/pytables/</a><br />
+		HDF5: <a href="http://www.hdfgroup.org/HDF5/">http://www.hdfgroup.org/HDF5/</a><br /><br />
+		<u>A-3. NetworkX</u><br />
+		The NetworkX Python module provides data structures and algorithms for large-scale graph analysis.<br /><br />
+		NetworkX documentation and downloads: <a href="http://networkx.github.io/">http://networkx.github.io/</a><br />
+		NetworkX installation instructions: <a href="http://networkx.github.io/documentation/latest/install.html">http://networkx.github.io/documentation/latest/install.html</a><br /><br />
+		<u>A-4. Rpy2</u><br />
+		The Rpy2 module allows a Python program to communicate with the R statistical environment. The use of Rpy2 allows for an amazing amount of flexibility for the types of statistical analyses that can be performed in conjunction with the feature selection procedure of the PolyGA program. However, it would not be difficult to modify the Python code to allow statistical analyses to be done directly within Python.<br /><br />
+		Rpy2 documentation: <a href="http://rpy.sourceforge.net/rpy2.html">http://rpy.sourceforge.net/rpy2.html</a><br />
+		Rpy2 downloads: <a href="http://sourceforge.net/projects/rpy/files/rpy2/">http://sourceforge.net/projects/rpy/files/rpy2/</a><br />
+		R project: <a href="http://www.r-project.org/">http://www.r-project.org/</a><br /><br />
+		<u>A-5. Parallel Python</u><br />
+		Parallel Python (PP) is a module that allows for parallel execution of python code on both multi-core computers and clusters.<br /><br />
+		PP documentation: <a href="http://www.parallelpython.com/">http://www.parallelpython.com/</a><br /><br />
+		<u>A-6. Matplotlib</u>
+		<br /><br />
+		Matplotlib documentation: <a href="http://matplotlib.org/">http://matplotlib.org/</a>
+		</p>
+		<span class="toc2" style="padding-left: 0px;"><a name="PolyGA">B. PolyGA</a></span>
+		<p>
+		To install the PolyGA program, simply <a href="../polyga.html#Downloads">download</a> the program archive and extract the contents. The archive contains the main program and required modules. It also includes example input files, an example R script and example simulated genotype data. The main program is named "polyga.py". The modules "polyga_utils.py" and "polyga_core.py" must be kept in the same directory as the main program. See the <a href="./quick_start.html">Quick Start Guide</a> for instructions about how to run an analysis using the supplied example data.
+		<p class="commandLine">tar -xzvf polyga-1.1b.tar.gz</br >cd polyga-1.1b</p>
+		</p>
+		<span class="toc1"><a name="Quick">II. Quick Start Guide</a></span> (<a href="#TOC">Back to top</a>)
+		<br /><br />
+		<span class="toc2" style="padding-left: 0px;">A. Using the supplied example scripts and data</span>
+		<p>
+		View the Quick Start Guide <a href="./quick_start.html">here</a>.
+		</p>
+		<span class="toc1"><a name="Input">III. Input</a></span> (<a href="#TOC">Back to top</a>)
+		<br /><br />
+		<span class="toc2" style="padding-left: 0px;"><a name="Parameters">A. PolyGA parameters</a></span>
+		<br /><br />
+		<span class="toc3" style="padding-left: 0px;"><a name="CommandLine">1. Command-line parameters</a></span>
+		<p>Use the -h option to view all the command-line options available for the PolyGA program and the appropriat usage.
+		<p class="commandLine">python polyga.py -h</p>
+		A description of each option is below:
+		<p style="font-family:courier; padding-left: 20px">
+		-h &nbsp&nbsp&nbsp&nbsp Displays the help message<br />
+		-a &nbsp&nbsp&nbsp&nbsp Specifies the level of analyis. The options are 'gene' and 'feature' (default).<br />
+		-c &nbsp&nbsp&nbsp&nbsp Specifies the path to the program configuration file.<br /> 
+		-g &nbsp&nbsp&nbsp&nbsp Specifies the path to a tab-delimited gene annotation file.<br />
+		-i &nbsp&nbsp&nbsp&nbsp Specifies the path to a tab-delimited gene-gene interaction file.<br />
+		-f &nbsp&nbsp&nbsp&nbsp Specifies the path to a tab-delimited gene-feature map file.<br />
+		-d &nbsp&nbsp&nbsp&nbsp Specifies the path of an HDF5 data file containing the gene, interaction and feature info.<br />
+		-o &nbsp&nbsp&nbsp&nbsp Specifies the prefix for the output files.<br />
+		-r &nbsp&nbsp&nbsp&nbsp Specifies the path to a results file. This option is used to print and plot results.<br />
+		-t &nbsp&nbsp&nbsp&nbsp Specifies a fitness threshold for printing significant results. Requires the -r option.<br />
+		-p &nbsp&nbsp&nbsp&nbsp A performance plot (-log(fitness) vs. generation) will be created. Requires the -r option.<br />
+		-cyto &nbsp Files that can be input into Cytoscape will be created. This option requires the -r option,<br />
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp and either a fitness threshold specified with the -t option, or two integers indicating the<br />
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp generation and group number of a specific feature set in the results file.
+		</p>
+		</p>
+		<span class="toc3" style="padding-left: 0px;"><a name="Config">2. Configuration file</a></span>
+		<p>
+		The configuration file contains all the required algorithm parameters, including the GA parameters (population size, mutation probability, etc.), the R script used for calculating the association statistics, and parameters for parallelizing the statistical calculations. 
+		The configuration file is a simple text file where each line contains a <b>variable=value</b> statement. 
+		Empty lines and lines beginning with a hash symbol (#) will be ignored. 
+		The configuration file should contain entries for the following parameters (an example configuration file 'polyga_GenABEL.conf' is provided in the program archive).
+		<p class="dataText">
+		# Example parameters<br />
+		pop_size=80<br />
+		generations=50<br />
+		min_group_size=2<br />
+		max_group_size=2<br />
+		connected=False<br />
+		select_type=hybrid<br />
+		hybrid_top=2<br />
+		migrants=4<br />
+		cross_type=uniform<br />
+		cross_prob=0.4<br />
+		mut_prob=0.4<br />
+		elite_num=2<br />
+		node_weight=0.75<br />
+		edge_weight=0.25<br />
+		R_script=polyga_Rscript_GenABEL.r<br />
+		generation_restart=-1<br />
+		fitness_restart=-1<br />
+		nprocs=1<br />
+		</p>
+		An explanation of each parameter is below:
+		<p style="font-family:courier; padding-left: 20px">
+		pop_size &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The GA population size<br />
+		generations &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The number of generations the GA will run<br />
+		min_group_size &nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The minimum number of features (or genes) allowed in each group<br />
+		max_group_size &nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The maximum number of features (or genes) allowed in each group<br />
+		connected &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [True | False] Require the feature set to be connected in the network?<br />
+		select_type &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [truncate | roulette | hybrid] The GA selection method<br />
+		hybrid_top &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The number fittest individuals selected with the hybrid method<br />
+		migrants &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The number of migrants (new individuals) created at each generation<br />
+		cross_type &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [uniform] Crossover method (only uniform supported at this time)<br />
+		cross_prob &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>float</i>] The crossover probability<br />
+		mut_prob &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>float</i>] The mutation probability<br />
+		elite_num &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The number of individuals that bypass mutation at each generation<br />
+		node_weight &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>float</i>] The weight applied to the gene score when stepping through the network<br />
+		edge_weight &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>float</i>] The weight applied to the interaction score (must equal 1.0 - node_weight)<br />
+		R_script &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>path</i>] A path to the R script that will be used for statistical calculations<br />
+		generation_restart &nbsp [<i>integer</i>] The search will restart if this number of generations passes with no<br />
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp fitness improvement<br />
+		fitness_restart &nbsp&nbsp&nbsp&nbsp [<i>float</i>] The search will restart after this fitness value is reached<br />
+		nprocs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp [<i>integer</i>] The number of parallel processes to start<br />
+		</p>
+		</p>
+		<span class="toc2" style="padding-left: 0px;"><a name="Annotations">B. Genome annotations</a></span>
+		<p>The gene score file should contain two columns. The first column is the gene ID and the second is a score indicating the likelihood that the gene affects the trait being studied. An example is below:
+		<p class="dataText">
+		gene&nbsp&nbsp&nbspscore<br />
+		TP53&nbsp&nbsp&nbsp1<br />
+		ACT&nbsp&nbsp&nbsp&nbsp1<br />
+		CD44&nbsp&nbsp&nbsp50<br />
+		NF2&nbsp&nbsp&nbsp&nbsp100<br />
+		ERBB2&nbsp&nbsp100</p>
+		The gene interaction file should contain three columns. The first two columns contain the IDs of two interacting genes, and the third column contains a score indicating the confidence in that interaction. An example is below:
+		<p class="dataText">
+		gene1&nbsp&nbspgene2&nbsp&nbspscore<br />
+		TP53&nbsp&nbsp&nbspACT&nbsp&nbsp&nbsp&nbsp110<br />
+		CD44&nbsp&nbsp&nbspNF2&nbsp&nbsp&nbsp&nbsp88<br />
+		CD44&nbsp&nbsp&nbspERBB2&nbsp&nbsp100</p>
+		The gene-feature map contains three columns. The first column is the feature ID (in the example below, the features are SNPs), the second column is the gene ID to which that feature is mapped, and the third column is a score for the feature.
+		<p class="dataText">
+		snp&nbsp&nbsp&nbsp&nbsp&nbspgene&nbsp&nbsp&nbspscore<br />
+		rs1235&nbsp&nbspCD44&nbsp&nbsp&nbsp4<br />
+		rs1234&nbsp&nbspERBB2&nbsp&nbsp1<br />
+		rs1111&nbsp&nbspNF2&nbsp&nbsp&nbsp&nbsp2<br />
+		rs1236&nbsp&nbspTP53&nbsp&nbsp&nbsp1<br />
+		rs1121&nbsp&nbspACT&nbsp&nbsp&nbsp&nbsp2</p>
+		</p>
+		<span class="toc2" style="padding-left: 0px;"><a name="Rscript">C. R script</a></span>
+		<p>An R script containing two functions is required for calculating the fitness values for each candidate feature set selected by the PolyGA algorithm. The R script will be sourced when the PolyGA program is started, and the fitness function will be called at each generation. Finally, a clean-up function will be called when PolyGA is finished running.<br /><br />
+		The R script must contain two functions named "r_get_fitness" and "shutdown_r", but it may also contain commands for loading the genetic data, etc. The "r_get_fitness" function simply takes a list of feature sets as a parameter and returns a list of fitness values. The "shutdown_r" function should contain any commands needed to quit R cleanly. For example, if the R calculations are parallelized (see section V below) you may need to ensure that all parallel processes are stopped before quitting R. This function definition is required, but it can be empty. An example R script 'polyga_Rscript_GenABEL.r' is provided in the program archive.
+		<p class="dataText">
+		## R script template<br /><br />
+		r_get_fitness = function(groups) {<br />
+		&nbsp&nbsp&nbsp# This function takes a list of lists of features<br />
+		&nbsp&nbsp&nbsp# and returns a list of fitness values<br />
+		&nbsp&nbsp&nbspfit_vals = c()<br />
+		&nbsp&nbsp&nbspfor (i in 1:length(groups)) {<br />
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp# calculate fitness for each group, and add fitness value to list<br />
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbspfit_vals = c(fit_vals, fitness)<br />
+		&nbsp&nbsp&nbsp}<br />
+		&nbsp&nbsp&nbspreturn(fit_vals)<br />
+		}
+		<br /><br />
+		shutdown_r = function() {<br />
+		&nbsp&nbsp&nbsp# This function simply performs any commands needed<br />
+		&nbsp&nbsp&nbsp# before stopping the R process<br />
+		}<br /></p></p>
+		<span class="toc1"><a name="Output">IV. Output</a></span> (<a href="#TOC">Back to top</a>)
+		<p>To view the results, use the -r option and the -t option to specify the results file and fitness threshold. Any feature sets with fitness values less than or equal to the specified threshold will be printed to a tab-delimited file. The file created will have the same prefix as the results file and '.assoc' as the extension. If the command below is run multiple times (e.g. with different fitness thresholds) numbers will be added to the file prefix (e.g., test_out.1.assoc, test_out.2.assoc, etc.)
+		<p class="commandLine">python -r test_out.h5 -t 0.05</p>
+		Including the -p option will output a PDF plot of the GA performance (-log(fitness) vs. generation), in addition to the tab-delimited results file.
+		<p class="commandLine">python -r test_out.h5 -t 0.05 -p</p>
+		The -cyto option will output files that can be used as input for Cytoscape, so that the discovered polygenic associations can be visualized within a network context. The -cyto option requires the results file to be specified with the -r option and either a p-value threshold (specified with the -t option) or two integers that specify the generation and group number of a specific feature set in the results file.
+		<p class="commandLine">python -cyto -r test_out.h5 -t 0.05</p>
+		<p class="commandLine">python -cyto -r test_out.h5 100 9</p></p>
+		<span class="toc1"><a name="Parallel">V. Parallelization</a></span> (<a href="#TOC">Back to top</a>)
+		<br /><br />
+		<span class="toc2" style="padding-left: 0px;"><a name="PP">A. Parallel Python</a></span>
+		<p>If the 'nprocs' option in the PolyGA configuration file is set to a value greater than 1, the Parallel Python (PP) module will be used to parallelize the GA. This can significantly improve runtime, especially when the algorithm is searching within large networks. PP can take advantage of multiple cores on a single machine and can also be used on clusters (although the setup for clusters is slightly more involved).
+		<br /><br />
+		PP documentation: <a href="http://www.parallelpython.com/">http://www.parallelpython.com/</a>
+		<p/>
+		<span class="toc2" style="padding-left: 0px;"><a name="Rparallel">B. R packages for parallel processing</a></span>
+		<p>Because the most computationally intense part of the search algorithm is the fitness calculations (the statistical test of association) it is usually a good idea to parallelize these calculations. The SNOW and Rmpi R packages, among others, can be used to parallelize R calculations.
+		<br /><br />
+		SNOW: <a href="http://cran.r-project.org/web/packages/snow/index.html">http://cran.r-project.org/web/packages/snow/index.html</a><br />
+		Rmpi: <a href="http://cran.r-project.org/web/packages/Rmpi/index.html">http://cran.r-project.org/web/packages/Rmpi/index.html</a>
+		</p>
+		
+		</td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<p style="font-family:impact; font-size:16pt; color:#3F3F3F; text-align:center">evo&middotcomp&middotbio</p>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

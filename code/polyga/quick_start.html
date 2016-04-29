@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<title>Michael Mooney, PhD | Code | PolyGA | Quick Start Guide</title>
+	<style>
+		body 				{background-color:lightgray; margin:0px}
+		.imageBox			{width:900px; height:125px; padding:0px; margin:0px; vertical-align:bottom; background-color:#3F3F3F}
+		.mainTable 			{background-color:white; width:900px; margin-left:auto; margin-right:auto; border-style:solid; border-width:1px; border-color:darkgray; border-collapse:collapse; padding:0px;}
+		.menuItem 			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:ghostwhite; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.menuItem:visited	{}
+		a.menuItem:hover		{background-color:darkslategrey; color:white; border-bottom-color:#3F3F3F}
+		a.menuItem.active		{}
+		.curItem			{width:25%; height:23px; font-family:verdana; font-weight:bold; font-size: 14px; color:black; text-align:center; background-color:lightsteelblue; padding:0px; margin:0px; border-style:solid; border-width:0px 1px 0px 1px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:link 		{display:block; width:100%; height:100%; margin:0px; padding:2px 0px 2px 0px; text-decoration:none; border-style:solid; border-width:1px 0px 5px 0px; border-color:darkgray; border-collapse:collapse}
+		a.curItem:visited		{}
+		a.curItem:hover		{}
+		a.curItem.active		{}
+		.tableBody			{background-color:white; width:900px; padding:10px 20px 10px 20px; font-family:verdana; font-size:10pt; color:black}
+		.commandLine		{font-family:courier; font-size:10pt; font-weight:bold; color:black; background-color:#F7F7E3; border:1px solid gray; padding:20px;}
+		.dataText			{font-family:courier; font-size:12pt; font-weight:bold; color:black; background-color:white; border:1px solid white; padding:10px;}
+	</style>
+</head>
+<body>
+	<table class="mainTable">
+	<tr>
+		<td class="imageBox" colspan=4><div style="height: 80px; width:425px; line-height:80px; background-color: #295747; color: white; font-family: impact; font-size: 44px; font-weight: lighter; text-align: center; float:left; vertical-align: middle; padding: 40px, 0px 0px 40px; border-width:1px; border-style:solid; border-color:dimgrey; margin:25px 0px 0px 25px"><span itemprop="name">Michael Mooney</span>, PhD</div><img style="float:right; margin:0px 75px 0px 0px" src="../../dna.gif"></td>
+	</tr>
+	<tr>
+		<td class="menuItem"><a class="menuItem" href="../../index.html">ABOUT</a></td>
+		<td class="menuItem"><a class="menuItem" href="../../research.html">RESEARCH</a></td>
+		<td class="curItem"><a class="curItem" href="../../code.html">CODE</a></td>
+		<td class="menuItem"><a class="menuItem" href="../../index.html">RESOURCES</a></td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		<header style="border-bottom: 1px solid #3F3F3F;"><h2 style="display: inline-block;">PolyGA: &nbsp;Quick Start Guide</h2><span style="margin-left: 435px;">(<a href="../polyga.html">Back to <b>PolyGA</b></a>)</span></header>
+		<br />
+		This guide will walk you though the basic procedure for running PolyGA with the example data provided. 
+		</td>
+	</tr>
+	<tr>
+		<td class="tableBody" colspan=4>
+		To start, change to the directory where you downloaded the PolyGA archive. Extract the contents and then change to the program directory:
+		<p class="commandLine">tar -xzvf polyga-1.1b.tar.gz</br >cd polyga-1.1b</p>
+		Now, use the -h option to see all available command-line options for the PolyGA program:
+		<p class="commandLine">python polyga.py -h</p>
+		Next, view the supplied configuration file (polyga.conf) so that you are familiar with the various program parameters. By default, the program will perform a short search (50 generations) for pairs of interacting SNPs.
+		<p class="commandLine">cat polyga.conf</p>
+		Next, view the R script that will be used to perform the statistical test of association for each candidate feature set. By default, the scan.glm.2D() function from the GenABEL R package will be used to test for SNP interactions. You will need to install the GenABEL R package before proceeding (<a href="http://www.genabel.org/packages/GenABEL">http://www.genabel.org/packages/GenABEL</a>). The provided R script is also setup to use the SNOW and foreach R packages to parallelize the statistical calculation and speed-up the run-time. If you do not want to parallelize the R calculations, you can modify the  R script. For more details see the <a href="./user_manual.html#R">user manual</a>.
+		<p class="commandLine">cat polyga_Rscript_GenABEL.r</p>
+		Now you are ready to run a short search using the supplied configuration file, network data and simulated genotypes. The results from this search will be saved in the current directory in a file named "test1_out.h5". Note that by default the search is done at the feature level, so the -a option is not strictly necessary in this case.
+		<p class="commandLine">python polyga.py -a feature -c polyga.conf -g ./data/ensembl_genes.txt \<br >-i ./data/interactions.txt -f ./data/snp_map.txt -o test1</p>
+		To view the results, use the -r option and the -t option to specify the results file and p-value threshold. Any SNP pairs with p-values less than or equal to 0.05 will be printed to a file named "test1_out.assoc". Note that since the search is stochastic you may have to adjust the threshold value.
+		<p class="commandLine">python -r test1_out.h5 -t 0.05</p>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="tableBody" colspan=4>
+		<p style="font-family:impact; font-size:16pt; color:#3F3F3F; text-align:center">evo&middotcomp&middotbio</p>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>
