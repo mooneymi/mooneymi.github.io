@@ -42,7 +42,7 @@ This class is meant to be a psychologically safe space where it's ok to ask ques
 
 We want to normalize your own curiosity and fuel your desire to learn more.
 
-If you are disruptive to class learning or disparaging to other students, we may mute you for the day.
+Please don't be disruptive to class learning or disparaging to other students.
 
 ---
 # Learning Objectives
@@ -63,9 +63,9 @@ If you are disruptive to class learning or disparaging to other students, we may
 - Command Line Review
 - Useful Data Structures in R/Python for handling Big Data
 - High Performance Computing (HPC)
-  - Exacloud and Amazon Web Services (AWS)
+  - Exacloud
 - Workflows
-  - Docker/GATK 
+  - GATK/Docker
 - Databases
   - Relational Databases
   - NoSQL Databases
@@ -84,37 +84,28 @@ If you are disruptive to class learning or disparaging to other students, we may
 
 Please contact us if you need to make an appointment
 
-- laderast@ohsu.edu
 - mooneymi@ohsu.edu
+- klockec@ohsu.edu
 
 ---
 
-# BMI 535 Slack
-
-https://bmi535.slack.com
-
-Invitations will be sent by email.
-
-Feel free to ask questions and answer them.
-
----
 class: center, middle
 
 # Why Big Data?
 
 ---
 
-&lt;img src="image/5V.png" width=600&gt;
+&lt;img src="images/5V.png" width=600&gt;
 ---
 # Big Data and Personalized Medicine
 
-&lt;img src="image/health_data_types.png" width="1267" /&gt;
+&lt;img src="images/health_data_types.png" width="1267" /&gt;
 
 ---
 # Precision Medicine
 
 
-&lt;img src="image/precision.png" width=750&gt;
+&lt;img src="images/precision.png" width=750&gt;
 
 ---
 # We need lots of genomes
@@ -128,7 +119,7 @@ Need to identify associations with disease
 
 .pull-right[
 
-  &lt;img src="image/gwas_infographic.jpg" width=400&gt;
+  &lt;img src="images/gwas_infographic.jpg" width=400&gt;
 ]
 
 ---
@@ -148,7 +139,7 @@ International project to construct a foundational data set of human genetics
 
 2504 individuals, 26 populations
 
-&lt;img src="image/1000genomes.png" width="1244" /&gt;
+&lt;img src="images/1000genomes.png" width="1244" /&gt;
 ---
 # 1000 genomes information
 
@@ -158,13 +149,14 @@ International project to construct a foundational data set of human genetics
  - dense microarray genotyping
 
 84.7M SNPs, 3.6 million indels, 60,000 structural variants
- - &gt;99% of SNP variants &gt;1% frequency (what does that mean?)
+ - The dataset contains &gt;99% of SNP variants with &gt;1% frequency (common variants)
+ - However, the majority of variants identified are rare (frequency &lt;0.5%)
 
 ---
 
 # Variation in 1000 genomes
 
-&lt;img src="image/1000var.png" width="941" /&gt;
+&lt;img src="images/1000var.png" width="941" /&gt;
 ---
 class: center, middle
 
@@ -173,12 +165,12 @@ class: center, middle
 ---
 # Open Repositories of Genomic Data
 
-&lt;img src="image/pgp.png" width="1280" /&gt;
+&lt;img src="images/pgp.png" width="1280" /&gt;
 
 ---
 # GA4GH
 
-&lt;img src="image/ga4gh.png" width="1267" /&gt;
+&lt;img src="images/ga4gh.png" width="1267" /&gt;
 
 ---
 
@@ -186,6 +178,8 @@ class: center, middle
 
 - Privacy/identifiability
 - Using specific genomic markers and de-identified information, we can uniquely identify about 87% of the US population that has participated in either 1000 genomes or GA4GH
+    - Ferguson, William. "A hacked database prompts debate about genetic privacy." Scientific American (2013).
+- Many large GWAS are done in homogeneous populations (mainly European-ancestry), and generalization of findings to other populations is often not possible.
 ---
 
 # Need to protect privacy 
@@ -198,7 +192,7 @@ Controlled Access
 ---
 # NIH Policy
 
-&lt;img src="image/nih.png" width="1243" /&gt;
+&lt;img src="images/nih.png" width="1243" /&gt;
 
 ---
 class: center, middle
@@ -250,14 +244,14 @@ class: center, middle
 
 `/home/its/ug1/eev51vn/report.doc`
 
-&lt;img src="image/file_directories.png" width="695" /&gt;
+&lt;img src="images/file_directories.png" width="695" /&gt;
 
 ---
 # Relative vs. Absolute Paths (8.3)
 
 If I'm in `/home/its/ug1`, how can I refer to `report.doc` from this folder?
 
-&lt;img src="image/file_directories.png" width="695" /&gt;
+&lt;img src="images/file_directories.png" width="695" /&gt;
 
 ---
 # Useful Commands for manipulating files (Chapters 8-10)
@@ -293,7 +287,7 @@ Be familiar with the following commands:
 ---
 # Let's Get onto State
 
-https://github.com/laderast/BMI535slides/blob/master/00_unix_basics.md
+[BMI535_Week_1.1.2_Unix_Basics.md](https://github.com/mooneymi/large_scale_data/blob/master/BMI535_Week_1.1.2_Unix_Basics.md)
 
 ---
 # Suggested Reading
